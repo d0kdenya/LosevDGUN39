@@ -47,8 +47,8 @@ namespace Tanks
 		/// </summary>
 		public Vector3 Velocity
 		{
-			get => _body.linearVelocity;
-			set => _body.linearVelocity = value;
+			get => _body.velocity;
+			set => _body.velocity = value;
 		}
 
 		public Vector3 Position
@@ -75,7 +75,7 @@ namespace Tanks
 		{
 			_body.position = Vector3.zero;
     		_body.rotation = Quaternion.identity;
-    		_body.linearVelocity = Vector3.zero;
+    		_body.velocity = Vector3.zero;
     		_body.angularVelocity = Vector3.zero;
     		transform.position = Vector3.zero;
 		}
@@ -91,7 +91,7 @@ namespace Tanks
 
 		public void AddForce(float velocity)
 		{
-			_body.linearVelocity = transform.forward * velocity;
+			_body.velocity = transform.forward * velocity;
 		}
 
 		private void Update()
