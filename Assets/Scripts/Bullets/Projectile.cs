@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -25,7 +25,7 @@ namespace Tanks
 		//Задержка перед автодетонацией
 		private float _delay;
 		//Физтело снаряда
-		public Rigidbody _body;
+		private Rigidbody _body;
 
 		[Tooltip("Радиус поражающей зоны")]
 		[SerializeField, Min(0.1f)]
