@@ -1396,6 +1396,7 @@ GameObject:
   - component: {fileID: 5393877097699406092}
   - component: {fileID: 1912705956654280633}
   - component: {fileID: 2293676498767683832}
+  - component: {fileID: 8753950632204123719}
   m_Layer: 5
   m_Name: Message
   m_TagString: Untagged
@@ -1419,8 +1420,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120, y: -75}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0.000030518, y: -75}
+  m_SizeDelta: {x: 440, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1912705956654280633
 CanvasRenderer:
@@ -1461,8 +1462,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
+  m_enableVertexGradient: 1
+  m_colorMode: 1
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
     topRight: {r: 1, g: 1, b: 1, a: 1}
@@ -1513,12 +1514,33 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -240.41699, w: 0}
+  m_margin: {x: 0, y: 0, z: 0.08976747, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!111 &8753950632204123719
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8071316428615432725}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 03a7410a49c8e8c40bce9c1e7d69dd53, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 03a7410a49c8e8c40bce9c1e7d69dd53, type: 2}
+  - {fileID: 7400000, guid: 6bec851adcfefb74a89043394b1799fb, type: 2}
+  - {fileID: 7400000, guid: adf07d31e0f1a7541bbf57287d05ce00, type: 2}
+  - {fileID: 7400000, guid: 7b1bb2ec042cd8b45b292d96c33bff37, type: 2}
+  - {fileID: 7400000, guid: 8f44670a648f4444e87e0090e64a8854, type: 2}
+  - {fileID: 7400000, guid: 7fda69ef72c147341b2e63edfd8a0458, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &8111451356525228223
 GameObject:
   m_ObjectHideFlags: 0
