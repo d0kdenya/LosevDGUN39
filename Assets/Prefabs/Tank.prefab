@@ -440,7 +440,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325142796819590651}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 0
@@ -541,7 +541,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3325142796819590651}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb71d6d589fd4f1292660e4fa94176a7, type: 3}
   m_Name: 
@@ -734,6 +734,7 @@ GameObject:
   - component: {fileID: 331887503954822667}
   - component: {fileID: 8224325977619831187}
   - component: {fileID: 4611219679672698562}
+  - component: {fileID: 4884307632313390066}
   m_Layer: 9
   m_Name: Tank
   m_TagString: Untagged
@@ -892,7 +893,7 @@ MonoBehaviour:
   - {fileID: 4633169397040618625}
   - {fileID: 8173877651037615873}
   - {fileID: 5742524777360522300}
-  _skidAudioSource: {fileID: 4611219679672698562}
+  _skidAudioSource: {fileID: 0}
   _transmission: {fileID: 11400000, guid: 0c2f3afca5d4da0449adf8d439d598d6, type: 2}
   _maxSteerAngle: 25
   _maxHandbrakeTorque: 1000
@@ -921,7 +922,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 64
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -999,6 +1000,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4884307632313390066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4051868164148569706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a49d79303a44ecb6d9bf161532c143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _motorAudioSource: {fileID: 4611219679672698562}
+  _workingAudioClip: {fileID: 8300000, guid: 03bf91d88fce91c41995d27de63cc967, type: 3}
+  _engineVolumeInterval: {x: 0.1, y: 0.7}
+  _enginePitchInterval: {x: 0.6, y: 1.5}
+  _maxTankSpeed: 120
 --- !u!1 &4060267555945593775
 GameObject:
   m_ObjectHideFlags: 0

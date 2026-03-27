@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -40,7 +40,7 @@ namespace Tanks
         [SerializeField, Tooltip("Дополнительная сила придавливания танка к земле. Улучшает сцепление с трассой")] 
         private float _downforce = 100f;
         [SerializeField, Tooltip("Пороговое значение, при котором скольжение колеса создает эффекты и звуки")] 
-        private float _slipLimit = .3f;
+        private float _slipLimit = .7f;
         [SerializeField, Tooltip("Множитель мощности двигателя при заднем ходе")]
         private float _reverseMult = .4f;
 
@@ -149,18 +149,18 @@ namespace Tanks
         //Проверка, нужно-ли включать трейл и звук скольжения
         private void CheckForWheelSpin()
         {
-            for (int i = 0; i < 4; i++)
+            var isTurningHard = Mathf.Abs(_controller.TankRotate) >= _slipLimit && CurrentSpeed > 5f;
+            var isSkidding = _controller.HandBrake || isTurningHard;
+
+            if (isSkidding)
             {
-                var wheelHit = _wheels[i].GetGroundHit;
-                //Скользит-ли колесо по трассе
-                if (Mathf.Abs(Mathf.Max(wheelHit.forwardSlip, wheelHit.sidewaysSlip)) >= _slipLimit)
-                {
-                    if (_skidAudioSource.isPlaying) continue;
+                if (!_skidAudioSource.isPlaying)
                     _skidAudioSource.Play();
-                }
-                //Если скольжения нет - выключаем звук и трейл
-                if (!_skidAudioSource.isPlaying) continue;
-                _skidAudioSource.Stop();
+            }
+            else
+            {
+                if (_skidAudioSource.isPlaying)
+                    _skidAudioSource.Stop();
             }
         }
 
