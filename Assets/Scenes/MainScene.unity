@@ -920,6 +920,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GUI
       objectReference: {fileID: 0}
+    - target: {fileID: 2293676498767683832, guid: ba3a1853c7612a447822f37dd6f7681c, type: 3}
+      propertyPath: m_margin.z
+      value: 0.08976747
+      objectReference: {fileID: 0}
     - target: {fileID: 2854479681234731116, guid: ba3a1853c7612a447822f37dd6f7681c, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1001,8 +1005,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5393877097699406092, guid: ba3a1853c7612a447822f37dd6f7681c, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393877097699406092, guid: ba3a1853c7612a447822f37dd6f7681c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000030518
+      objectReference: {fileID: 0}
+    - target: {fileID: 5393877097699406092, guid: ba3a1853c7612a447822f37dd6f7681c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -0.696
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
