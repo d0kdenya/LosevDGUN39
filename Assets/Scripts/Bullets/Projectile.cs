@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +26,8 @@ namespace Tanks
 		private float _delay;
 		//Физтело снаряда
 		private Rigidbody _body;
+		//След снаряда
+		private TrailRenderer _trail;
 
 		[Tooltip("Радиус поражающей зоны")]
 		[SerializeField, Min(0.1f)]
@@ -61,23 +63,32 @@ namespace Tanks
 		{
 			_body = GetComponent<Rigidbody>();
 			_mask = LayerMask.GetMask(_layerNames);
+			_trail = GetComponentInChildren<TrailRenderer>();
 		}
 
 		private void OnEnable()
 		{
-		
 			//Активация таймера при пересоздании снаряда
-			 _delay = _lifeTime;
-
+			_delay = _lifeTime;
+			if (_trail != null)
+			{
+				_trail.Clear();
+				_trail.emitting = true;
+			}
 		}
 
 		private void OnDisable()
 		{
 			_body.position = Vector3.zero;
-    		_body.rotation = Quaternion.identity;
-    		_body.velocity = Vector3.zero;
-    		_body.angularVelocity = Vector3.zero;
-    		transform.position = Vector3.zero;
+			_body.rotation = Quaternion.identity;
+			_body.velocity = Vector3.zero;
+			_body.angularVelocity = Vector3.zero;
+			transform.position = Vector3.zero;
+			if (_trail != null)
+			{
+				_trail.emitting = false;
+				_trail.Clear();
+			}
 		}
 
 		public void SetPosition(Transform pos)
@@ -87,6 +98,7 @@ namespace Tanks
 			transform.forward = pos.forward;
 			_body.position = pos.position;
 			_body.rotation = pos.rotation;
+			_trail?.Clear();
 		}
 
 		public void AddForce(float velocity)
